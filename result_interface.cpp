@@ -17,6 +17,7 @@ void set_result(const uint8_t result) {
 }
 
 volatile uint8_t state = HIGH;
+
 void isr_result_t() {
     state = !state;
     digitalWrite(RESULT, state);

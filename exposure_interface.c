@@ -16,11 +16,11 @@ uint16_t get_exposure() {
 
 void exposure_isr() {
     const uint32_t t = micros();
-    if(digitalRead(EXPOSURE)) {
-      exposure_period = t - exposure_rise_time;
-      exposure_rise_time = t;
+    if (digitalRead(EXPOSURE)) {
+        exposure_period = t - exposure_rise_time;
+        exposure_rise_time = t;
     } else {
-      exposure_pulse_width = micros() - exposure_rise_time;
+        exposure_pulse_width = micros() - exposure_rise_time;
     }
 }
 

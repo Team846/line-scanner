@@ -16,11 +16,11 @@ uint8_t get_threshold() {
 
 void threshold_isr() {
     const uint32_t t = micros();
-    if(digitalRead(THRESHOLD)) {
-      threshold_period = t - threshold_rise_time;
-      threshold_rise_time = t;
+    if (digitalRead(THRESHOLD)) {
+        threshold_period = t - threshold_rise_time;
+        threshold_rise_time = t;
     } else {
-      threshold_pulse_width = micros() - threshold_rise_time;
+        threshold_pulse_width = micros() - threshold_rise_time;
     }
 }
 
